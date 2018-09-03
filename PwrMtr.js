@@ -1,16 +1,13 @@
 
 const pwrParent = this;
-//var Height = new Array(300); 
-//Height.reverse();
 pwrParent.height = 300;
-var power = pwrParent.height/3;
-pwrSpeed=2;
-//hitPwr=pwrParent.height/4;
+pwrSpeed=2
+var power = 0;
+
 function MasterPwr(){
-    //hitPwr = 0;
-    hitPwr=pwrParent.height/4;
+
     pwrColor = new pwrColor();
-    //AddtoMeter
+
     function pwrColor(){
         //console.log(hitPwr);
     ctx.beginPath();
@@ -43,14 +40,14 @@ function MasterPwr(){
     ctx.closePath();
 
     }
-
-    if(Input.down == 1 && pwrParent.height>=7){
-        pwrSpeed--;
-        //Height.length-=pwrSpeed;
-        pwrParent.height+=pwrSpeed;
-        //console.log("Should be Down");
-        }else if(Input.down == 0 && pwrParent.height <= 300){
-            pwrSpeed=2;
+power = Math.round(pwrParent.height/-9);
+console.log(pwrSpeed);
+    if(Input.down == 1 && pwrParent.height>=0){
+        Math.round(pwrSpeed--);
+        Math.round(pwrParent.height+=pwrSpeed);
+        
+        }else if(Input.down == 0 && pwrParent.height <= 300 && pwrSpeed<=10){
+        pwrSpeed++;
             pwrParent.height+=pwrSpeed;
         }
 

@@ -2,15 +2,17 @@
 
 const ballPwr = this;
 var follow = setInterval(follow, 1000/fps);
-ballPwr.speed = 15;
+ballPwr.speed = 0;
 ballPwr.x = 0;
 ballPwr.y = 0;
 ballPwr.xVel = 0;
 ballPwr.yVel = 0;
 ballPwr.angle = 90;
+
+
+
 function drawBall(){
 
-    
 Ball = new Ball();
 
     function Ball(){
@@ -56,39 +58,34 @@ Ball = new Ball();
         ctx.fill();
         ctx.closePath();
     }
-    if(ballPwr.y<500 && ballPwr.yVel<=0){
-        ballPwr.yVel+=0.5;
-        if(ballPwr.yVel>0){
-            ballPwr.yVel-=0.5;
-        }
+    // SLOW DOWN
+    if(ballPwr.y<500 && ballPwr.yVel>=.5){
+        ballPwr.yVel-=0.5;
+    
     }
+    
 // SHOOT ZE BALL
+ballPwr.speed = pwrParent.height /4;
     if(pwrParent.height < 299 && Input.spacebar==1){
         Shoot();
         }else{follow;}
     function Shoot(){
-        ballPwr.yVel += Math.sin((ballPwr.angle + 180) * Math.PI / 180) * Input.spacebar * ballPwr.speed;
+        ballPwr.yVel += Math.round(Math.sin((ballPwr.angle + 180) * Math.PI / 180)  * power * Input.spacebar);
         clearInterval(follow);
         pwrParent.height = 299;
         //console.log("Pushing");
     }
-//pwrParent.xVel += Math.cos((pwrParent.angle + 180) * Math.PI / 180) * Input.spacebar * ballPwr.speed;
-//pwrParent.x += pwrParent.xVel;
-ballPwr.y += ballPwr.yVel;
-    // /console.log(hitPwr);
-    
-
+    ballPwr.y -= ballPwr.yVel;
+    //console.log(yVel);
+if(Input.r == 1){
+    setInterval(follow, 1000/fps);
+}  
 // END DRAWBALL()
 }
 
 
-function reset(){
-    follow();
-}
-
 function follow(){
     ballPwr.x = Player.x +98;
     ballPwr.y = Player.y -30;
-    console.log("following");
+    //console.log("following");
 }
-

@@ -7,6 +7,7 @@ Input.left = 0;
 Input.right = 0;
 Input.down = 0;
 Input.spacebar = 0;
+Input.r = 0;
 var delta = 400;
 var lastKeypressTime = 0;
 
@@ -21,6 +22,9 @@ function keyDown(event){
         }
     if (event.key == "ArrowDown" || event.key == "s") {
         Input.down = 1;
+        }
+    if (event.key == "r") {
+        Input.r = 1;
         }
     if(event.key == " "){
         Input.spacebar = 1;
@@ -46,6 +50,10 @@ function keyUp(event){
     if (event.key == "ArrowDown" || event.key == "s") {
         Input.down = 0;
     }
+    if(event.key == "r"){
+        Input.r = 0;
+  
+    }
     if(event.key == " "){
         Input.spacebar = 0;
   
@@ -61,15 +69,5 @@ dblTapBool = true;
 }
 
 
-ctx.beginPath();
-   
-    ctx.fillStyle="white";
-    
-    ctx.rect(580,500,50,30);
-    ctx.fill();
-    ctx.stroke();
-    ctx.strokeText("POWER!",582,515);
-    //ctx.strokeText();
-ctx.closePath();
 
 
