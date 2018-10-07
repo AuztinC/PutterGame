@@ -59,11 +59,11 @@ Parent.update = function(){
 
         Club = new Club();
         function Club(){
+//      CLUB ANIMATION
 
-            //this.angle = 180;
-
+            //Frame 1 / 0Pwr
+           if(pwrParent.height=="0"){
             ctx.beginPath();
-            //ctx.fillStyle="red";
 
             ctx.moveTo(Parent.x+38, Parent.y+10);
             ctx.lineTo(Parent.x+88, Parent.y-20);
@@ -71,6 +71,78 @@ Parent.update = function(){
 
             ctx.stroke();
             ctx.closePath();
+           }
+           //Frame 2 / -30Pwr
+           if(pwrParent.height<"0"&&pwrParent.height>"-30"){
+            ctx.beginPath();
+
+            ctx.moveTo(Parent.x+38, Parent.y+10);
+            ctx.lineTo(Parent.x+88, Parent.y-10);
+            ctx.lineTo(Parent.x+108,Parent.y-10);
+
+            ctx.stroke();
+            ctx.closePath();
+           }
+           //Frame 3 / -100Pwr
+           if(pwrParent.height<"-30"&&pwrParent.height>"-100"){
+            ctx.beginPath();
+
+            ctx.moveTo(Parent.x+38, Parent.y+10);
+            ctx.lineTo(Parent.x+88, Parent.y-5);
+            ctx.lineTo(Parent.x+108,Parent.y-5);
+
+            ctx.stroke();
+            ctx.closePath();
+           }
+           //Frame 4 / -175Pwr
+           if(pwrParent.height<"-100"&&pwrParent.height>"-175"){
+            ctx.beginPath();
+
+            ctx.moveTo(Parent.x+38, Parent.y+10);
+            ctx.lineTo(Parent.x+88, Parent.y+5);
+            ctx.lineTo(Parent.x+108,Parent.y+5);
+
+            ctx.stroke();
+            ctx.closePath();
+           }
+           //Frame 5 / -250Pwr
+           if(pwrParent.height<"-175"&&pwrParent.height>"-250"){
+            ctx.beginPath();
+
+            ctx.moveTo(Parent.x+38, Parent.y+10);
+            ctx.lineTo(Parent.x+88, Parent.y+15);
+            ctx.lineTo(Parent.x+108,Parent.y+15);
+
+            ctx.stroke();
+            ctx.closePath();
+           }
+           //Frame 6 / -275Pwr
+           if(pwrParent.height<"-250"&&pwrParent.height>"-275"){
+            ctx.beginPath();
+
+            ctx.moveTo(Parent.x+38, Parent.y+10);
+            ctx.lineTo(Parent.x+88, Parent.y+20);
+            ctx.lineTo(Parent.x+108,Parent.y+20);
+
+            ctx.stroke();
+            ctx.closePath();
+           }
+           //Frame 7 / -297Pwr
+           if(pwrParent.height<"-275"){
+            ctx.beginPath();
+
+            ctx.moveTo(Parent.x+38, Parent.y+10);
+            ctx.lineTo(Parent.x+88, Parent.y+25);
+            ctx.lineTo(Parent.x+108,Parent.y+25);
+
+            ctx.stroke();
+            ctx.closePath();
+           }
+           
+           
+           
+
+            
         }
 
 
@@ -92,7 +164,7 @@ if(Input.left == 0){
         Parent.exVel+=0.5;
     }
 }
-//console.log(Parent.xVel);
+//console.log(pwrParent.height);
 if(Parent.xVel>=10){
     Parent.xVel+=.5;
 }

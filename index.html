@@ -17,33 +17,34 @@
 
 //const mainBox = document.getElementById('canvas').getContext('2d');
 
-    function Refresh() {
-        mainBox.clearRect(0,0,canvas.widthcanvas.height);
-        Score.draw();
-    }
+//    function Refresh() {
+//        mainBox.clearRect(0,0,canvas.widthcanvas.height);
+//        Score.draw();
+//    }
 
     const c = document.getElementById("canvas");
     const ctx = c.getContext("2d");
 
 
 	let fps = 30;
-
+    // RUN TIME
 	setInterval(function() {
 		ctx.clearRect(0, 0, c.width, c.height);
-		Player.update();
+        Player.update();
         MasterPwr();
+        newHole();
         drawBall();
-        
-        //drawClub();
 	}, 1000/fps);
-
+    //
 </script>
     <script src="Input.js"></script>
     <script src="PwrMtr.js"></script>
     <script src="Player.js"></script>
     <script src="Club.js"></script>
+    <script src="Hole.js"></script>
     <script src="jsCreateTest.js"></script>
     <script src="Ball.js"></script>
+    
 
 
 </body>

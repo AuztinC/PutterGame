@@ -31,13 +31,15 @@ function keyDown(event){
         
     }
         var thisKeypressTime = new Date();
-        if ( thisKeypressTime - lastKeypressTime <= delta )
+        if ( thisKeypressTime.left - lastKeypressTime.left <= delta )
         {
         dblTap();
         thisKeypressTime = 0;
         }
     lastKeypressTime = thisKeypressTime;
-    document.removeEventListener("keydown",keyDown);
+   //document.removeEventListener("keydown",keyDown);
+    //Input.left=0;
+    //Input.right=0;
 }
 
 function keyUp(event){
@@ -59,12 +61,12 @@ function keyUp(event){
   
     }
     dblTapBool=false;
-    document.addEventListener("keydown",keyDown);
+    //document.addEventListener("keydown",keyDown);
 }
 
 
 function dblTap(){
-//console.log("DOUBLEDOO");
+console.log("DOUBLEDOO");
 dblTapBool = true;
 }
 

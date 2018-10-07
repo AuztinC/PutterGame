@@ -67,12 +67,13 @@ Ball = new Ball();
 // SHOOT ZE BALL
 ballPwr.speed = pwrParent.height /4;
     if(pwrParent.height < 299 && Input.spacebar==1){
-        Shoot();
+        setTimeout(Shoot,100);
         }else{follow;}
     function Shoot(){
+        
         ballPwr.yVel += Math.round(Math.sin((ballPwr.angle + 180) * Math.PI / 180)  * power * Input.spacebar);
         clearInterval(follow);
-        pwrParent.height = 299;
+        pwrParent.height = -1;
         //console.log("Pushing");
     }
     ballPwr.y -= ballPwr.yVel;
