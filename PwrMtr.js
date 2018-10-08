@@ -3,8 +3,8 @@ const pwrParent = this;
 pwrParent.height = 0;
 pwrSpeed=2
 var power = 0;
-
 function MasterPwr(){
+
 function PwrMtr(){
     console.log();
     ctx.beginPath();

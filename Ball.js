@@ -9,10 +9,15 @@ ballPwr.xVel = 0;
 ballPwr.yVel = 0;
 ballPwr.angle = 90;
 
-
+//console.log(this);
+function follow(){
+    ballPwr.x = Player.x +98;
+    ballPwr.y = Player.y -30;
+    //console.log("following");
+}   
 
 function drawBall(){
-
+    
 Ball = new Ball();
 
     function Ball(){
@@ -65,7 +70,7 @@ Ball = new Ball();
     }
     
 // SHOOT ZE BALL
-ballPwr.speed = pwrParent.height /4;
+//ballPwr.speed = pwrParent.height /4;
     if(pwrParent.height < 299 && Input.spacebar==1){
         setTimeout(Shoot,100);
         }else{follow;}
@@ -85,8 +90,3 @@ if(Input.r == 1){
 }
 
 
-function follow(){
-    ballPwr.x = Player.x +98;
-    ballPwr.y = Player.y -30;
-    //console.log("following");
-}
