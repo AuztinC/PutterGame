@@ -11,16 +11,18 @@
 
 <canvas id="canvas" height="700px" width="650px" style="background-image:url(images/golfGreen.jpeg)"><h1 class="h1"></h1></canvas>
 
+<input name="shirtColor" id="shirtColor" type="color" class="shirtCO">
+
+<div id="shirtColorPicker">
+<button id="leftPicker" class="shirtCO"><<</button>
+<input type="range" name="shirtRange" id="shirtRange" min="0" max="13">
+<button id="rightPicker" class="shirtCO, shirtRight">>></button>
+</div>
+
+<input id="hairColor" type="color" class="hairCO">
 
 
 <script>
-
-//const mainBox = document.getElementById('canvas').getContext('2d');
-
-//    function Refresh() {
-//        mainBox.clearRect(0,0,canvas.widthcanvas.height);
-//        Score.draw();
-//    }
 
     const c = document.getElementById("canvas");
     const ctx = c.getContext("2d");
@@ -42,7 +44,7 @@
     <script src="Player.js"></script>
     <script src="Club.js"></script>
     <script src="Hole.js"></script>
-    <script src="jsCreateTest.js"></script>
+    <!-- <script src="jsCreateTest.js"></script> -->
     <script src="Ball.js"></script>
     
 

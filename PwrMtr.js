@@ -6,7 +6,7 @@ var power = 0;
 function MasterPwr(){
 
 function PwrMtr(){
-    console.log();
+    //console.log();
     ctx.beginPath();
         ctx.fillStyle="white";
         ctx.rect(10,250,40,300);
@@ -51,7 +51,7 @@ power = Math.round(pwrParent.height/9);
     if(Input.down == 0 && pwrParent.height <= 0){
         pwrSpeed=2
         //pwrSpeed++;
-        pwrParent.height+=10;
+        pwrParent.height+=2;
     }
     if(pwrParent.height>-1){
         pwrParent.height=0;

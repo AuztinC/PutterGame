@@ -41,7 +41,6 @@ function keyDown(event){
     //Input.left=0;
     //Input.right=0;
 }
-
 function keyUp(event){
     if (event.key == "ArrowRight" || event.key == "d") {
         Input.right = 0;

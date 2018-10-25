@@ -2,7 +2,7 @@
 const rHole = this;
 rHole.rx = xHole(60,600);
 rHole.ry = yHole(30,400);
-
+var score = false;
 function yHole(yMin, yMax) {
     return Math.floor(Math.random() * (yMax - yMin + 1) ) + yMin;
 }
@@ -11,9 +11,10 @@ function xHole(xMin, xMax) {
 }
 function newHole(){
     
+    let angle = Math.round( Math.atan2(rHole.ry - ballPwr.y, rHole.rx - ballPwr.x));
+    let dist = Math.round( Math.sqrt(Math.pow(ballPwr.x - rHole.rx, 2) + Math.pow(ballPwr.y - rHole.ry, 2)));
 
-
-//console.log(rHole.k);
+//console.log(ballPwr.yVel);
 Hole = new Hole();
     function Hole(){
 
@@ -32,23 +33,26 @@ Hole = new Hole();
         ctx.closePath();
     
     ctx.beginPath();
-        ctx.fillStyle="black";
+        ctx.fillStyle="white";
         ctx.arc(rHole.rx,rHole.ry,7,0,2*Math.PI);
         ctx.stroke();
         ctx.fill();
         ctx.closePath();
-    }
-    console.log(bhDifference());
-    //console.log(ballPwr.y);
-function bhDifference(){
 
-    return Math.round(Math.cos(ballPwr.yVel) * Math.PI - rHole.ry);
-}
-
-    if(rHole.ry==ballPwr.y){
-        alert("Good Job!");
-        
+    ctx.beginPath();
+        ctx.fillStyle="white";
+        ctx.arc(rHole.rx,rHole.ry,2,0,2*Math.PI);
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
     }
+    
+
+    if(dist<=9 && ballPwr.yVel<=9){
+        // /alert("Good Job!");
+    score = true;
+    }
+
 
 }
 

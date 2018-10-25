@@ -1,7 +1,6 @@
 
 
 
-
 Player = new Player();
 
 function Player(){
@@ -16,13 +15,41 @@ Parent.speed = 2;
 Parent.angle = 0;
 
 
-Parent.update = function(){
+// COLOR ME SILLY
 
+//hair
+hairColor=document.getElementById("hairColor");
+hairColor.defaultValue = "#ecec01";
+
+shirtDiv = document.getElementById("shirtColor");
+shirtDiv.defaultValue = "#d05900";
+
+shirtRange=document.getElementById("shirtRange");
+shirtLeft=document.getElementById("leftPicker");
+shirtRight=document.getElementById("rightPicker");
+shirtLeft.onclick=(leftPicker());
+shirtRight.addEventListener("click", rightPicker());
+
+function leftPicker(){
+    shirtRange.value-=2;
+    console.log("clickedleft");
+}
+function rightPicker(){
+    shirtRange.value+=2;
+    console.log("clickedright");
+}
+
+
+
+// COLOR ME SILLY
+
+Parent.update = function(){
+    console.log(shirtRange.value);
     Body = new BuildaBody();
     function BuildaBody(){
         //body
         ctx.beginPath();
-            ctx.fillStyle="chocolate";
+            ctx.fillStyle=shirtDiv.value;
             ctx.arc(Parent.x,Parent.y,40,0,2*Math.PI);
             ctx.stroke();
             ctx.fill();
@@ -36,7 +63,7 @@ Parent.update = function(){
         ctx.closePath();
         //hair
         ctx.beginPath();
-            ctx.fillStyle="yellow";
+            ctx.fillStyle=hairColor.value;
             ctx.arc(Parent.x-12,Parent.y,20,1,5);
             ctx.stroke();
             ctx.fill();

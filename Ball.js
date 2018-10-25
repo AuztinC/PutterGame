@@ -64,8 +64,12 @@ Ball = new Ball();
         ctx.closePath();
     }
     // SLOW DOWN
-    if(ballPwr.y<500 && ballPwr.yVel>=.5){
+    if(ballPwr.y<600 && ballPwr.yVel>=.25){
         ballPwr.yVel-=0.5;
+        if(ballPwr.yVel>10){
+            ballPwr.yVel-=.25;
+        }
+        
     
     }
     
@@ -82,10 +86,33 @@ Ball = new Ball();
         //console.log("Pushing");
     }
     ballPwr.y -= ballPwr.yVel;
+
+    //BALL ANIMATION    
+    if(score==true){
+        setTimeout(frame1, 100);
+        setTimeout(frame2, 200);
+        setTimeout(frame3, 300);
+        setTimeout(frame4, 400);
+
+        
+    }
+    function frame1(){
+        ballPwr.x = rHole.rx - 2;
+        ballPwr.y = rHole.ry - 2;
+    }
+    function frame2(){
+        ballPwr.x = rHole.rx - 1;
+        ballPwr.y = rHole.ry - 1;
+    }
+    function frame3(){
+        ballPwr.x = rHole.rx - 4;
+        ballPwr.y = rHole.ry - 3;
+    }
+    function frame4(){
+        ballPwr.x = rHole.rx - 4;
+        ballPwr.y = rHole.ry - 3;
+    }
     //console.log(yVel);
-if(Input.r == 1){
-    setInterval(follow, 1000/fps);
-}  
 // END DRAWBALL()
 }
 
